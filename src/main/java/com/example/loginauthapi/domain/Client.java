@@ -1,17 +1,13 @@
 package com.example.loginauthapi.domain;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
 @Table(name = "client")
 @Getter
 @Setter
-@NoArgsConstructor
-@AllArgsConstructor
 public class Client {
 
     @Id
@@ -20,4 +16,12 @@ public class Client {
     private String name;
     private String email;
     private String cpf;
+
+    public Client() {}
+
+    public Client(String name, String email, String cpf) {
+        this.name = name;
+        this.email = email;
+        this.cpf = cpf;
+    }
 }
